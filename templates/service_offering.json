@@ -1,0 +1,12 @@
+{
+  "name": "Service Offering",
+  "subject": "Helping {{category}} businesses in {{city}}",
+  "body_text": "Hello {{first_name}},\n\nI noticed {{business_name}} has been serving customers in {{city}}. That's fantastic!\n\nWe specialize in helping {{category}} businesses like yours:\n- Increase online reviews and ratings\n- Improve local search visibility\n- Generate more qualified leads\n- Automate customer follow-up\n\nMany of our {{category}} clients see 30-50% more leads within 90 days.\n\nWould you like to see how this could work for {{business_name}}?\n\nI'm happy to provide a free 15-minute consultation.\n\nBest,\n[Your Name]",
+  "body_html": "<p>Hello {{first_name}},</p>\n\n<p>I noticed <strong>{{business_name}}</strong> has been serving customers in {{city}}. That's fantastic!</p>\n\n<p>We specialize in helping {{category}} businesses like yours:</p>\n<ul>\n<li>Increase online reviews and ratings</li>\n<li>Improve local search visibility</li>\n<li>Generate more qualified leads</li>\n<li>Automate customer follow-up</li>\n</ul>\n\n<p>Many of our {{category}} clients see 30-50% more leads within 90 days.</p>\n\n<p>Would you like to see how this could work for <strong>{{business_name}}</strong>?</p>\n\n<p>I'm happy to provide a free 15-minute consultation.</p>\n\n<p>Best,<br>[Your Name]</p>",
+  "variables": [
+    "business_name",
+    "category",
+    "city",
+    "first_name"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "job_id": "abb1027e-9b1c-4fc3-837b-eaaaa50bce26",
+  "business_type": "remodeling",
+  "location": "San Francisco, CA",
+  "generated_at": "2025-09-20 18:56:55",
+  "total_leads": 8,
+  "leads": [
+    {
+      "name": "Mission Home Remodeling",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "We Do Construction",
+      "address": "We Do Construction  5.0(146)Contractor · 1528 Union StClosed ⋅ Opens 8 am Mon · +1 415-416-5494WebsiteDirections  \"Jacob and his team did a tremendous job, remodeling our main bathroom.\"",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "TRIOND Remodeling and Design Inc.",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.9",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "Edri Construction",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.8",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "San Francisco Bathroom Remodeler By Pacific Construction",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "Only Kitchens and Baths Inc",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "A2Z Remodeling Inc. San Francisco",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "SBC CONSTRUCTION",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.6",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    }
+  ]
+}

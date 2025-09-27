@@ -1,0 +1,59 @@
+{
+  "job_id": "69551b04-f97a-4228-814b-f15449b38368",
+  "business_type": "Townsvill",
+  "location": "San Francisco, CA",
+  "generated_at": "2025-09-23 13:35:39",
+  "total_leads": 5,
+  "leads": [
+    {
+      "name": "Strategy Sprints, San Francisco",
+      "address": "Strategy Sprints, San Francisco",
+      "website": "http://www.strategysprints.com/",
+      "phone": "",
+      "rating": "4.9",
+      "source": "Google Maps",
+      "email": "severino@strategysprints.com",
+      "email_scraped": true
+    },
+    {
+      "name": "Salt Branding",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "3.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "Kamei Housewares & Restaurant Supply",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.4",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "San Francisco Chamber of Commerce",
+      "address": "San Francisco Chamber of Commerce  4.0(9)Chamber of Commerce ·  · Russ Building, 235 Montgomery St #760Closed ⋅ Opens 8 am · +1 415-392-4520WebsiteDirections  \"Great supporter of businesses large and small!\"",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "Growth Business",
+      "address": "Growth Business  No reviewsBusiness management consultant · Ashton & Porter, 500 Terry A Francois BlvdClosed ⋅ Opens 7 amDirections",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    }
+  ]
+}

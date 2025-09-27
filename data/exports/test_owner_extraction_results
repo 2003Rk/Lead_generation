@@ -1,0 +1,2 @@
+business_name,phone,email,address,website,category,rating,review_count,price_range,neighborhood,hours,description,yelp_url,scraped_date,search_query,search_location,email_verified,email_status,email_confidence,email_verification_icon,has_website,owner_name,linkedin_profile
+Smallbusinessexample,7621175430,info@smallbusinessexample.com,"San Francisco, CA Area",https://www.smallbusinessexample.com,Home Design,4.9,67,$$,Custom Website,Visit website for hours,,,2025-09-13 18:29:38,home design,"San Francisco, CA",False,,,,True,,

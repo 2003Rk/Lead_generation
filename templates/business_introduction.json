@@ -1,0 +1,13 @@
+{
+  "name": "Business Introduction",
+  "subject": "Quick question about {{business_name}}",
+  "body_text": "Hi {{first_name}},\n\nI came across {{business_name}} and was impressed by your {{rating}}-star rating in {{city}}!\n\nI help {{category}} businesses like yours increase their online visibility and attract more customers.\n\nWould you be interested in a quick 15-minute call to discuss how we could help {{business_name}} grow?\n\nBest regards,\n[Your Name]\n[Your Company]\n[Your Phone]",
+  "body_html": "<p>Hi {{first_name}},</p>\n\n<p>I came across <strong>{{business_name}}</strong> and was impressed by your {{rating}}-star rating in {{city}}!</p>\n\n<p>I help {{category}} businesses like yours increase their online visibility and attract more customers.</p>\n\n<p>Would you be interested in a quick 15-minute call to discuss how we could help {{business_name}} grow?</p>\n\n<p>Best regards,<br>\n[Your Name]<br>\n[Your Company]<br>\n[Your Phone]</p>",
+  "variables": [
+    "business_name",
+    "category",
+    "city",
+    "first_name",
+    "rating"
+  ]
+}

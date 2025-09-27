@@ -1,0 +1,89 @@
+{
+  "job_id": "7ac17c31-5626-42d2-afa4-9278e3378b2e",
+  "business_type": "remodeling",
+  "location": "San Francisco, CA",
+  "generated_at": "2025-09-23 22:47:12",
+  "total_leads": 8,
+  "leads": [
+    {
+      "name": "We Do Construction",
+      "address": "We Do Construction  5.0(146)Contractor · 1528 Union StOpen ⋅ Closes 6 pm · +1 415-416-5494WebsiteDirections  \"Jacob and his team did a tremendous job, remodeling our main bathroom.\"",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "Mission Home Remodeling",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "TRIOND Remodeling and Design Inc.",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.9",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "Edri Construction",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.8",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "San Francisco Bathroom Remodeler By Pacific Construction",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "A2Z Remodeling Inc. San Francisco",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "Only Kitchens and Baths Inc",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "5.0",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    },
+    {
+      "name": "SBC CONSTRUCTION",
+      "address": "",
+      "website": "https://www.google.co.in/intl/en/about/products?tab=lh",
+      "phone": "",
+      "rating": "4.7",
+      "source": "Google Maps",
+      "email": "",
+      "email_scraped": false
+    }
+  ]
+}

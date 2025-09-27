@@ -1,0 +1,11 @@
+business_name,phone,address,website,category,rating,review_count,yelp_url,description,hours,price_range,contact_email
+Tony's Pizza Palace,(555) 123-4567,"123 Main St, New York, NY 10001",https://tonyspizza.com,Italian Restaurant,4.5,234,,Authentic Italian pizza since 1985,Mon-Sun: 11AM-11PM,$$,
+Smith & Associates Law Firm,(555) 987-6543,"456 Oak Ave, New York, NY 10002",https://smithlaw.com,Law Firm,4.8,89,,Personal injury and business law specialists,Mon-Fri: 9AM-6PM,$$$,
+Green Dental Care,(555) 456-7890,"789 Pine St, New York, NY 10003",https://greendentalcare.com,Dentist,4.7,156,,Family dentistry with a gentle touch,Mon-Sat: 8AM-7PM,$$,
+Auto Fix Pro,(555) 321-0987,"321 Elm St, New York, NY 10004",https://autofixpro.com,Auto Repair,4.3,203,,Complete automotive repair and maintenance,"Mon-Fri: 7AM-6PM, Sat: 8AM-4PM",$$,
+Fitness First Gym,(555) 654-3210,"654 Maple Ave, New York, NY 10005",https://fitnessfirstgym.com,Gym,4.2,312,,State-of-the-art fitness equipment and classes,Mon-Sun: 5AM-11PM,$$,
+Tony's Pizza Palace - Branch 1,(555) 784-1086,"123 Main St, New York, NY 10001",https://tonyspizza.com,Italian Restaurant,4.5,234,,Authentic Italian pizza since 1985,Mon-Sun: 11AM-11PM,$$,
+Smith & Associates Law Firm - Branch 2,(555) 155-1356,"456 Oak Ave, New York, NY 10002",https://smithlaw.com,Law Firm,4.8,89,,Personal injury and business law specialists,Mon-Fri: 9AM-6PM,$$$,
+Green Dental Care - Branch 3,(555) 378-9986,"789 Pine St, New York, NY 10003",https://greendentalcare.com,Dentist,4.7,156,,Family dentistry with a gentle touch,Mon-Sat: 8AM-7PM,$$,
+Auto Fix Pro - Branch 4,(555) 250-2558,"321 Elm St, New York, NY 10004",https://autofixpro.com,Auto Repair,4.3,203,,Complete automotive repair and maintenance,"Mon-Fri: 7AM-6PM, Sat: 8AM-4PM",$$,
+Fitness First Gym - Branch 5,(555) 984-6292,"654 Maple Ave, New York, NY 10005",https://fitnessfirstgym.com,Gym,4.2,312,,State-of-the-art fitness equipment and classes,Mon-Sun: 5AM-11PM,$$,

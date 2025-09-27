@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्री Lead Automation - Sacred Lead Generation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hindu-font {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        
+        .temple-bg {
+            background: linear-gradient(135deg, #ff9933 0%, #ffffff 25%, #138808 75%, #000080 100%);
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .temple-pattern {
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255, 153, 51, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(19, 136, 8, 0.1) 0%, transparent 50%);
+        }
+        
+        .sacred-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 153, 51, 0.2);
+            box-shadow: 0 4px 20px rgba(255, 153, 51, 0.15);
+        }
+        
+        .om-symbol::before {
+            content: "ॐ";
+            font-size: 1.2rem;
+            color: #ff9933;
+            margin-right: 0.5rem;
+        }
+        
+        .lotus-border {
+            border: 1px solid #ff9933;
+            border-radius: 0.75rem;
+        }
+        
+        .progress-sacred {
+            background: linear-gradient(90deg, #ff9933, #138808);
+            transition: width 0.3s ease;
+        }
+        
+        .shloka-text {
+            font-style: italic;
+            color: #666;
+            font-size: 0.75rem;
+        }
+        
+        /* Mobile Responsive Improvements */
+        @media (max-width: 768px) {
+            .mobile-stack {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .mobile-full-height {
+                height: auto;
+                min-height: 60vh;
+            }
+            
+            .mobile-scroll {
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+            
+            .mobile-text-sm {
+                font-size: 0.875rem;
+            }
+            
+            .mobile-compact {
+                padding: 1rem;
+            }
+            
+            .mobile-grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mobile-hidden {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .sacred-card {
+                margin: 0 0.5rem;
+            }
+            
+            .mobile-grid-1 {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-text-xs {
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* Clean Table Styles */
+        .clean-table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        
+        .clean-table th {
+            background: #fff8f0;
+            border-bottom: 2px solid #ff9933;
+        }
+        
+        .clean-table td {
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        /* Card hover effects */
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 153, 51, 0.2);
+        }
+        
+        /* Google Maps specific styles */
+        .source-tabs {
+            display: flex;
+            border-bottom: 2px solid #ff9933;
+            margin-bottom: 1rem;
+        }
+        
+        .source-tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .source-tab.active {
+            border-bottom-color: #ff9933;
+            color: #ff9933;
+            font-weight: 600;
+        }
+        
+        .source-content {
+            display: none;
+        }
+        
+        .source-content.active {
+            display: block;
+        }
+        
+        .map-preview {
+            height: 150px;
+            background-color: #f0f0f0;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjEgMTBjMCA3LTkgMTMtOSAxM3MtOS02LTktMTNhOSA5IDAgMCAxIDE4IDB6Ij48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMCIgcj0iMyI+PC9jaXJjbGU+PC9zdmc+');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 48px;
+        }
+        
+        .map-preview-text {
+            color: #666;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="min-h-screen temple-bg temple-pattern">
+    <!-- Sacred Header -->
+    <header class="py-3 px-4 md:py-4 md:px-6">
+        <div class="sacred-card rounded-xl p-3 md:p-4 mx-auto max-w-7xl hover-lift">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white text-lg md:text-xl font-bold">
+                        ॐ
+                    </div>
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold text-gray-800 hindu-font">श्री Lead Automation</h1>
+                        <p class="text-xs md:text-sm text-gray-600">Sacred Business Discovery Platform</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="shloka-text hidden sm:block">"सत्यमेव जयते" - Truth alone triumphs</div>
+                    <div class="shloka-text sm:hidden text-xs">सत्यमेव जयते</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content - Responsive Layout -->
+    <main class="px-4 pb-4 md:px-6 md:pb-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mobile-stack lg:grid lg:grid-cols-3 lg:gap-6 mobile-full-height lg:h-[calc(100vh-150px)]">
+                
+                <!-- Left Panel - Sacred Form -->
+                <div class="lg:col-span-1 mb-4 lg:mb-0">
+                    <div class="sacred-card rounded-xl mobile-compact md:p-6 mobile-scroll lg:h-full lg:overflow-y-auto lotus-border hover-lift">
+                        <!-- Form Header -->
+                        <div class="text-center mb-4 md:mb-6">
+                            <div class="text-2xl md:text-3xl mb-2">🕉️</div>
+                            <h2 class="text-base md:text-lg font-semibold text-gray-800 hindu-font om-symbol">Lead Generation</h2>
+                            <p class="text-xs md:text-sm text-gray-600 shloka-text">"कर्मण्येवाधिकारस्ते" - Focus on action</p>
+                        </div>
+                        
+                        <!-- Source Selection Tabs -->
+                        <div class="source-tabs mb-4">
+                            <div class="source-tab active" data-source="google-maps">🗺️ Maps</div>
+                            <div class="source-tab" data-source="directories">📚 Directories</div>
+                        </div>
+                        
+                        <!-- Google Maps Form -->
+                        <form id="googleMapsForm" class="source-content active space-y-3 md:space-y-4">
+                            <!-- Business Type -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    🏢 Business Type
+                                </label>
+                                <input type="text" id="businessType" 
+                                       placeholder="e.g., restaurants, dentists"
+                                       class="w-full px-3 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-sm mobile-text-sm"
+                                       required>
+                            </div>
+                            
+                            <!-- Location -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    📍 City & Country
+                                </label>
+                                <input type="text" id="location" 
+                                       placeholder="e.g., New York, USA"
+                                       class="w-full px-3 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-sm mobile-text-sm"
+                                       required>
+                            </div>
+                            
+                            <!-- Map Preview -->
+                            <div class="map-preview">
+                                <div class="map-preview-text">Map preview for your search</div>
+                            </div>
+                            
+                            <!-- Number of Leads -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    🔢 Number of Leads
+                                </label>
+                                <select id="maxResults" class="w-full px-3 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm mobile-text-sm">
+                                    <option value="10">10 leads</option>
+                                    <option value="20" selected>20 leads</option>
+                                    <option value="30">30 leads</option>
+                                    <option value="50">50 leads</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Email Options -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    📧 Email Options
+                                </label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <label class="flex items-center space-x-2 p-2 rounded-lg hover:bg-orange-50 cursor-pointer">
+                                        <input type="checkbox" id="enableEmail" checked class="text-orange-500 rounded">
+                                        <span class="text-xs mobile-text-xs">Extract Emails</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 p-2 rounded-lg hover:bg-orange-50 cursor-pointer">
+                                        <input type="checkbox" id="enableEmailVerification" checked class="text-orange-500 rounded">
+                                        <span class="text-xs mobile-text-xs">Verify Emails</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Generate Button -->
+                            <button type="submit" id="generateBtn" 
+                                    class="w-full bg-gradient-to-r from-orange-400 to-red-500 text-white font-medium py-3 px-4 rounded-lg hover:from-orange-500 hover:to-red-600 transition-all duration-300 text-sm shadow-lg hover:shadow-xl">
+                                🚀 Generate Sacred Leads
+                            </button>
+                        </form>
+                        
+                        <!-- Directories Form (Hidden by Default) -->
+                        <form id="directoriesForm" class="source-content space-y-3 md:space-y-4">
+                            <!-- Business Type -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    🏢 Business Type
+                                </label>
+                                <input type="text" id="searchQuery" 
+                                       placeholder="e.g., restaurants, dentists"
+                                       class="w-full px-3 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-sm mobile-text-sm"
+                                       required>
+                            </div>
+                            
+                            <!-- Location -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    📍 Location
+                                </label>
+                                <input type="text" id="dirLocation" 
+                                       placeholder="e.g., New York, NY"
+                                       class="w-full px-3 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-sm mobile-text-sm"
+                                       required>
+                            </div>
+                            
+                            <!-- Number of Leads -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    🔢 Number of Leads
+                                </label>
+                                <select id="dirMaxResults" class="w-full px-3 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm mobile-text-sm">
+                                    <option value="10">10 leads</option>
+                                    <option value="25" selected>25 leads</option>
+                                    <option value="50">50 leads</option>
+                                    <option value="100">100 leads</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Data Sources -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    📊 Data Sources
+                                </label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <label class="flex items-center space-x-2 p-2 rounded-lg hover:bg-orange-50 cursor-pointer">
+                                        <input type="checkbox" name="sources" value="yelp" checked class="text-orange-500 rounded">
+                                        <span class="text-xs mobile-text-xs">🌟 Yelp</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 p-2 rounded-lg hover:bg-orange-50 cursor-pointer">
+                                        <input type="checkbox" name="sources" value="yellowpages" class="text-orange-500 rounded">
+                                        <span class="text-xs mobile-text-xs">📞 Yellow Pages</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 p-2 rounded-lg hover:bg-orange-50 cursor-pointer">
+                                        <input type="checkbox" name="sources" value="houzz" class="text-orange-500 rounded">
+                                        <span class="text-xs mobile-text-xs">🏠 Houzz</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Email Options -->
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1 md:mb-2">
+                                    📧 Email Options
+                                </label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <label class="flex items-center space-x-2 p-2 rounded-lg hover:bg-orange-50 cursor-pointer">
+                                        <input type="checkbox" id="dirEnableEmail" checked class="text-orange-500 rounded">
+                                        <span class="text-xs mobile-text-xs">Extract Emails</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 p-2 rounded-lg hover:bg-orange-50 cursor-pointer">
+                                        <input type="checkbox" id="dirEnableEmailVerification" checked class="text-orange-500 rounded">
+                                        <span class="text-xs mobile-text-xs">Verify Emails</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Generate Button -->
+                            <button type="submit" id="dirGenerateBtn" 
+                                    class="w-full bg-gradient-to-r from-orange-400 to-red-500 text-white font-medium py-3 px-4 rounded-lg hover:from-orange-500 hover:to-red-600 transition-all duration-300 text-sm shadow-lg hover:shadow-xl">
+                                🚀 Generate Sacred Leads
+                            </button>
+                        </form>
+                        
+                        <!-- Enhanced Progress Section with Circular Indicator -->
+                        <div id="progressSection" class="mt-4 md:mt-6 hidden">
+                            <div class="lotus-border p-4 md:p-6 bg-gradient-to-br from-orange-50 to-orange-100">
+                                <!-- Circular Progress Indicator -->
+                                <div class="text-center mb-4">
+                                    <div class="relative inline-block">
+                                        <svg class="transform -rotate-90 w-20 h-20 md:w-24 md:h-24" viewBox="0 0 100 100">
+                                            <circle 
+                                                cx="50" cy="50" r="40" 
+                                                stroke="#f3f4f6" stroke-width="8" 
+                                                fill="none"
+                                            />
+                                            <circle 
+                                                id="progressCircle"
+                                                cx="50" cy="50" r="40" 
+                                                stroke="#ff9933" stroke-width="8" 
+                                                fill="none"
+                                                stroke-dasharray="251.2"
+                                                stroke-dashoffset="251.2"
+                                                stroke-linecap="round"
+                                                class="transition-all duration-300 ease-in-out"
+                                            />
+                                        </svg>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <div id="progressPercent" class="text-lg md:text-xl font-bold text-orange-600">0%</div>
+                                                <div class="text-xs text-gray-500">Progress</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Current Step Display -->
+                                <div class="text-center mb-4">
+                                    <div id="currentStepIcon" class="text-2xl mb-2">🚀</div>
+                                    <h3 id="currentStep" class="font-semibold text-gray-800 text-sm md:text-base">Initializing...</h3>
+                                    <p id="detailedStatus" class="text-xs md:text-sm text-gray-600 mt-1">Starting lead generation process...</p>
+                                </div>
+                                
+                                <!-- Progress Stats -->
+                                <div class="grid grid-cols-2 gap-2 text-center text-xs mobile-text-xs">
+                                    <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm">
+                                        <div class="text-gray-500 mb-1">Job ID</div>
+                                        <div class="font-medium text-gray-800 truncate" id="currentJobId">-</div>
+                                    </div>
+                                    <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm">
+                                        <div class="text-gray-500 mb-1">Found Leads</div>
+                                        <div class="font-bold text-green-600" id="foundLeads">0</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Loading Animation -->
+                                <div class="mt-4 flex justify-center">
+                                    <div class="flex space-x-1">
+                                        <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                                        <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                                        <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Panel - Sacred Results -->
+                <div class="lg:col-span-2">
+                    <div class="sacred-card rounded-xl mobile-compact md:p-6 mobile-scroll lg:h-full lotus-border hover-lift">
+                        <!-- Results Section -->
+                        <div id="resultsSection" class="lg:h-full hidden">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
+                                <div>
+                                    <h3 class="text-base md:text-lg font-semibold text-gray-800 hindu-font om-symbol">Sacred Results</h3>
+                                    <p class="text-xs md:text-sm text-gray-600" id="resultsSubtext">Your blessed leads are ready</p>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <button id="downloadCSV" class="px-3 py-1 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-all text-xs md:text-sm">
+                                        📄 CSV
+                                    </button>
+                                    <button id="downloadJSON" class="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-all text-xs md:text-sm">
+                                        📄 JSON
+                                    </button>
+                                    <button id="newSearch" class="px-3 py-1 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 transition-all text-xs md:text-sm">
+                                        🔄 New
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Summary Stats -->
+                            <div id="resultsSummary" class="grid mobile-grid-2 md:grid-cols-4 gap-2 md:gap-3 mb-4">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                            
+                            <!-- Results Table -->
+                            <div class="overflow-auto mobile-scroll lg:h-[calc(100%-120px)]">
+                                <table class="w-full text-xs md:text-sm clean-table">
+                                    <thead class="sticky top-0 bg-orange-50">
+                                        <tr class="border-b border-orange-200">
+                                            <th class="text-left text-gray-700 font-medium py-2 px-2 md:px-3">Business</th>
+                                            <th class="text-left text-gray-700 font-medium py-2 px-2 md:px-3 mobile-hidden">Contact</th>
+                                            <th class="text-left text-gray-700 font-medium py-2 px-2 md:px-3">Info</th>
+                                            <th class="text-left text-gray-700 font-medium py-2 px-2 md:px-3 mobile-hidden">Location</th>
+                                            <th class="text-left text-gray-700 font-medium py-2 px-2 md:px-3">Source</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="resultsTableBody">
+                                        <!-- Results will be populated here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Default State -->
+                        <div id="defaultState" class="flex items-center justify-center lg:h-full min-h-[50vh]">
+                            <div class="text-center p-4">
+                                <div class="text-4xl md:text-6xl mb-4">🕉️</div>
+                                <h3 class="text-lg md:text-xl font-medium text-gray-600 hindu-font mb-2">Sacred Results Await</h3>
+                                <p class="text-gray-500 shloka-text text-sm">"धैर्यवान् लभते सर्वम्" - The patient one obtains everything</p>
+                                <p class="text-xs md:text-sm text-gray-400 mt-2">Fill the form to begin your spiritual lead journey</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Backend Configuration
+        const BACKEND_URL = 'http://localhost:8080';
+        
+        // Global variables
+        let currentJobId = null;
+        let progressInterval = null;
+        let currentSource = 'google-maps'; // Default to Google Maps
+        
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up source tabs
+            setupSourceTabs();
+            
+            // Form submissions
+            document.getElementById('googleMapsForm').addEventListener('submit', startGoogleMapsScraping);
+            document.getElementById('directoriesForm').addEventListener('submit', startDirectoriesScraping);
+            
+            // Download buttons
+            document.getElementById('downloadCSV').addEventListener('click', () => downloadFile('csv'));
+            document.getElementById('downloadJSON').addEventListener('click', () => downloadFile('json'));
+            document.getElementById('newSearch').addEventListener('click', resetForm);
+            
+            // Update map preview when location changes
+            document.getElementById('location').addEventListener('input', updateMapPreview);
+            document.getElementById('businessType').addEventListener('input', updateMapPreview);
+        });
+        
+        function setupSourceTabs() {
+            const tabs = document.querySelectorAll('.source-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const source = this.getAttribute('data-source');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show correct form
+                    document.querySelectorAll('.source-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(source === 'google-maps' ? 'googleMapsForm' : 'directoriesForm').classList.add('active');
+                    
+                    currentSource = source;
+                });
+            });
+        }
+        
+        function updateMapPreview() {
+            const businessType = document.getElementById('businessType').value;
+            const location = document.getElementById('location').value;
+            
+            const mapPreview = document.querySelector('.map-preview');
+            if (businessType && location) {
+                mapPreview.innerHTML = `<div class="map-preview-text">Searching: ${businessType} in ${location}</div>`;
+            } else {
+                mapPreview.innerHTML = `<div class="map-preview-text">Map preview for your search</div>`;
+            }
+        }
+        
+        async function startGoogleMapsScraping(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                business_type: document.getElementById('businessType').value.trim(),
+                location: document.getElementById('location').value.trim(),
+                max_results: parseInt(document.getElementById('maxResults').value),
+                enable_email: document.getElementById('enableEmail').checked,
+                enable_email_verification: document.getElementById('enableEmailVerification').checked
+            };
+            
+            // Validate
+            if (!formData.business_type || !formData.location) {
+                showError('Please fill in both business type and location');
+                return;
+            }
+            
+            try {
+                // Disable form
+                document.getElementById('generateBtn').disabled = true;
+                document.getElementById('generateBtn').innerHTML = '⚡ Starting Sacred Process...';
+                
+                // Start job - using a different endpoint for Google Maps
+                const response = await axios.post(`${BACKEND_URL}/api/start-google-maps-scraping`, formData);
+                currentJobId = response.data.job_id;
+                
+                // Show progress
+                showProgress();
+                
+                // Start monitoring
+                startProgressMonitoring();
+                
+            } catch (error) {
+                console.error('Error starting job:', error);
+                showError(error.response?.data?.error || 'Failed to start Google Maps scraping');
+                resetForm();
+            }
+        }
+        
+        async function startDirectoriesScraping(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                search_query: document.getElementById('searchQuery').value.trim(),
+                location: document.getElementById('dirLocation').value.trim(),
+                max_results: parseInt(document.getElementById('dirMaxResults').value),
+                enable_email: document.getElementById('dirEnableEmail').checked,
+                enable_email_verification: document.getElementById('dirEnableEmailVerification').checked,
+                sources: Array.from(document.querySelectorAll('input[name="sources"]:checked')).map(cb => cb.value),
+                custom_websites: []
+            };
+            
+            // Validate
+            if (!formData.search_query || !formData.location) {
+                showError('Please fill in both business type and location');
+                return;
+            }
+            
+            if (formData.sources.length === 0) {
+                showError('Please select at least one data source');
+                return;
+            }
+            
+            try {
+                // Disable form
+                document.getElementById('dirGenerateBtn').disabled = true;
+                document.getElementById('dirGenerateBtn').innerHTML = '⚡ Starting Sacred Process...';
+                
+                // Start job
+                const response = await axios.post(`${BACKEND_URL}/api/start-scraping`, formData);
+                currentJobId = response.data.job_id;
+                
+                // Show progress
+                showProgress();
+                
+                // Start monitoring
+                startProgressMonitoring();
+                
+            } catch (error) {
+                console.error('Error starting job:', error);
+                showError(error.response?.data?.error || 'Failed to start lead generation');
+                resetForm();
+            }
+        }
+        
+        function showProgress() {
+            document.getElementById('progressSection').classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('defaultState').classList.add('hidden');
+            
+            // Set initial job info
+            document.getElementById('currentJobId').textContent = currentJobId ? currentJobId.substring(0, 8) : '-';
+            document.getElementById('foundLeads').textContent = '0';
+        }
+        
+        function startProgressMonitoring() {
+            if (progressInterval) {
+                clearInterval(progressInterval);
+            }
+            
+            progressInterval = setInterval(async () => {
+                if (!currentJobId) {
+                    clearInterval(progressInterval);
+                    progressInterval = null;
+                    return;
+                }
+                
+                try {
+                    console.log(`Checking job status for: ${currentJobId}`);
+                    const response = await axios.get(`${BACKEND_URL}/api/job-status/${currentJobId}`);
+                    const job = response.data;
+                    
+                    console.log('Job status:', job.status, 'Progress:', job.progress);
+                    
+                    // Update circular progress
+                    updateCircularProgress(job.progress);
+                    
+                    // Update percentage
+                    document.getElementById('progressPercent').textContent = `${job.progress}%`;
+                    document.getElementById('foundLeads').textContent = job.leads_count || 0;
+                    
+                    // Update current step and detailed status
+                    if (job.current_step) {
+                        document.getElementById('currentStep').textContent = job.current_step;
+                        updateStepIcon(job.current_step);
+                    }
+                    
+                    if (job.detailed_status) {
+                        document.getElementById('detailedStatus').textContent = job.detailed_status;
+                    }
+                    
+                    // Check if completed
+                    if (job.status === 'completed') {
+                        console.log('Job completed! Showing results...');
+                        console.log('Job data:', job);
+                        console.log('Leads count:', job.leads_count);
+                        console.log('Leads array:', job.leads);
+                        
+                        clearInterval(progressInterval);
+                        progressInterval = null;
+                        updateCircularProgress(100);
+                        
+                        // Show success message
+                        document.getElementById('progressText').textContent = 'Leads successfully generated! 🎉';
+                        if (document.getElementById('currentStepIcon')) {
+                            document.getElementById('currentStepIcon').textContent = '🎉';
+                        }
+                        
+                        // Small delay to ensure all DOM updates are complete
+                        setTimeout(() => {
+                            console.log('About to call showResults...');
+                            showResults(job);
+                            resetFormButton(); // Only reset button, keep data
+                            updateTotalStats();
+                            console.log('showResults completed');
+                        }, 500); // Small 500ms delay
+                        
+                    } else if (job.status === 'failed') {
+                        console.log('Job failed:', job.error);
+                        clearInterval(progressInterval);
+                        progressInterval = null;
+                        showError(job.error || 'Sacred process failed');
+                        resetForm();
+                    }
+                    
+                } catch (error) {
+                    console.error('Error checking job status:', error);
+                    // Don't immediately clear interval on network errors
+                    if (error.response && error.response.status === 404) {
+                        clearInterval(progressInterval);
+                        progressInterval = null;
+                        showError('Job not found');
+                        resetForm();
+                    }
+                }
+            }, 1500); // Check every 1.5 seconds
+        }
+        
+        function updateCircularProgress(progress) {
+            const circle = document.getElementById('progressCircle');
+            const circumference = 2 * Math.PI * 40; // radius = 40
+            const offset = circumference - (progress / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+        }
+        
+        function updateStepIcon(stepText) {
+            const iconElement = document.getElementById('currentStepIcon');
+            
+            // Map step text to appropriate icons
+            if (stepText.includes('Initializing')) {
+                iconElement.textContent = '🚀';
+            } else if (stepText.includes('browser')) {
+                iconElement.textContent = '🔧';
+            } else if (stepText.includes('search')) {
+                iconElement.textContent = '🎯';
+            } else if (stepText.includes('collection')) {
+                iconElement.textContent = '🌐';
+            } else if (stepText.includes('Scraping')) {
+                iconElement.textContent = '📊';
+            } else if (stepText.includes('scraping')) {
+                iconElement.textContent = '🔍';
+            } else if (stepText.includes('emails')) {
+                iconElement.textContent = '📧';
+            } else if (stepText.includes('Verifying')) {
+                iconElement.textContent = '✅';
+            } else if (stepText.includes('Processing')) {
+                iconElement.textContent = '📝';
+            } else if (stepText.includes('files')) {
+                iconElement.textContent = '💾';
+            } else if (stepText.includes('Complete')) {
+                iconElement.textContent = '🎉';
+            } else if (stepText.includes('Error')) {
+                iconElement.textContent = '❌';
+            } else {
+                iconElement.textContent = '⚡';
+            }
+        }
+        
+        function showResults(job) {
+            console.log('=== showResults function called ===');
+            console.log('Job object:', job);
+            console.log('Job leads_count:', job.leads_count);
+            console.log('Job leads array length:', job.leads ? job.leads.length : 'No leads array');
+            
+            // Force hide all other sections first
+            const progressSection = document.getElementById('progressSection');
+            const defaultState = document.getElementById('defaultState');
+            const resultsSection = document.getElementById('resultsSection');
+            
+            if (progressSection) {
+                progressSection.classList.add('hidden');
+                console.log('Progress section hidden');
+            }
+            
+            if (defaultState) {
+                defaultState.classList.add('hidden');
+                console.log('Default state hidden');
+            }
+            
+            // Force show results section
+            if (resultsSection) {
+                resultsSection.classList.remove('hidden');
+                resultsSection.style.display = 'block'; // Force display
+                console.log('Results section should now be visible');
+                console.log('Results section classes:', resultsSection.className);
+            } else {
+                console.error('Results section not found!');
+                return;
+            }
+            
+            // Update results info
+            const resultsSubtext = document.getElementById('resultsSubtext');
+            if (resultsSubtext) {
+                let sourceText = '';
+                if (job.sources_used && job.sources_used.length > 0) {
+                    sourceText = `from ${job.sources_used.join(', ')}`;
+                } else if (job.source) {
+                    sourceText = `from ${job.source}`;
+                } else {
+                    sourceText = 'from sacred sources';
+                }
+                resultsSubtext.textContent = `${job.leads_count || 0} blessed leads ${sourceText}`;
+                console.log('Results subtext updated');
+            }
+            
+            // Update summary with better error handling
+            const summary = document.getElementById('resultsSummary');
+            if (summary) {
+                const leadsWithEmail = job.leads ? job.leads.filter(l => l.email && l.email.trim()).length : 0;
+                const leadsWithWebsite = job.leads ? job.leads.filter(l => l.website && l.website.trim()).length : 0;
+                
+                summary.innerHTML = `
+                    <div class="bg-white rounded-lg p-3 text-center lotus-border">
+                        <div class="text-lg font-bold text-orange-600">${job.leads_count || 0}</div>
+                        <div class="text-gray-600 text-xs">Total Leads</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center lotus-border">
+                        <div class="text-lg font-bold text-green-600">${leadsWithEmail}</div>
+                        <div class="text-gray-600 text-xs">With Email</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center lotus-border">
+                        <div class="text-lg font-bold text-blue-600">${leadsWithWebsite}</div>
+                        <div class="text-gray-600 text-xs">With Website</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 text-center lotus-border">
+                        <div class="text-lg font-bold text-purple-600">${job.sources_used ? job.sources_used.length : 1}</div>
+                        <div class="text-gray-600 text-xs">Sources</div>
+                    </div>
+                `;
+                console.log('Summary updated');
+            }
+            
+            // Populate table
+            const tbody = document.getElementById('resultsTableBody');
+            if (!tbody) {
+                console.error('Results table body not found!');
+                return;
+            }
+            
+            tbody.innerHTML = '';
+            
+            console.log('Job leads:', job.leads);
+            
+            if (job.leads && job.leads.length > 0) {
+                console.log(`Adding ${job.leads.length} leads to table`);
+                job.leads.forEach((lead, index) => {
+                    console.log(`Adding lead ${index + 1}:`, lead.business_name || lead.name);
+                    const row = document.createElement('tr');
+                    row.className = 'border-b border-orange-200 hover:bg-orange-50';
+                    
+                    // Use business_name for directories or name for Google Maps
+                    const businessName = lead.business_name || lead.name || 'N/A';
+                    const category = lead.category || '';
+                    const phone = lead.phone || '';
+                    const email = lead.email || '';
+                    const address = lead.address || '';
+                    const website = lead.website || '';
+                    const source = lead.source || 'Google Maps';
+                    
+                    // Mobile-friendly table row with responsive design
+                    row.innerHTML = `
+                        <td class="py-2 px-2 md:px-3">
+                            <div class="font-medium text-gray-800 text-sm mobile-text-xs">${businessName}</div>
+                            <div class="text-gray-600 text-xs mobile-text-xs">${category}</div>
+                            <div class="md:hidden text-xs mt-1">
+                                ${phone ? `<div class="text-gray-700">📞 ${phone}</div>` : ''}
+                                ${email ? `<div class="text-blue-600">📧 ${email.substring(0, 20)}${email.length > 20 ? '...' : ''}</div>` : ''}
+                                ${address ? `<div class="text-gray-500 text-xs">📍 ${address.substring(0, 30)}${address.length > 30 ? '...' : ''}</div>` : ''}
+                            </div>
+                        </td>
+                        <td class="py-2 px-2 md:px-3 text-sm mobile-hidden">
+                            ${phone ? `<div class="text-gray-700 text-xs">📞 ${phone}</div>` : ''}
+                            ${email ? `<div class="text-blue-600 text-xs">📧 ${email}</div>` : ''}
+                        </td>
+                        <td class="py-2 px-2 md:px-3 text-sm mobile-text-xs">
+                            ${website ? 
+                                `<a href="${website}" target="_blank" class="text-blue-600 hover:underline text-xs">🌐 Web</a>` 
+                                : '<span class="text-gray-400 text-xs">❌ None</span>'
+                            }
+                        </td>
+                        <td class="py-2 px-2 md:px-3 text-gray-700 text-sm mobile-hidden">${address}</td>
+                        <td class="py-2 px-2 md:px-3">
+                            <span class="px-1 md:px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded">${source.substring(0, 8)}</span>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } else {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="py-8 text-center text-gray-500">
+                            <div class="text-2xl md:text-4xl mb-2">🙏</div>
+                            <div class="text-sm">No sacred leads found for this search</div>
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+        
+        async function downloadFile(type) {
+            if (!currentJobId) return;
+            
+            try {
+                const response = await axios.get(`${BACKEND_URL}/api/download/${currentJobId}/${type}`, {
+                    responseType: 'blob'
+                });
+                
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', `sacred_leads_${currentJobId.substring(0, 8)}.${type}`);
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                window.URL.revokeObjectURL(url);
+                
+            } catch (error) {
+                console.error('Download error:', error);
+                showError('Failed to download sacred file');
+            }
+        }
+        
+        async function updateTotalStats() {
+            try {
+                const response = await axios.get(`${BACKEND_URL}/api/recent-jobs`);
+                const jobs = response.data.jobs;
+                
+                const totalLeads = jobs.filter(job => job.status === 'completed').reduce((sum, job) => sum + job.leads_count, 0);
+                const activeJobs = jobs.filter(job => job.status === 'running' || job.status === 'pending').length;
+                
+                // Update header stats if elements exist
+                const totalLeadsEl = document.getElementById('totalLeads');
+                const activeJobsEl = document.getElementById('activeJobs');
+                
+                if (totalLeadsEl) totalLeadsEl.textContent = totalLeads;
+                if (activeJobsEl) activeJobsEl.textContent = activeJobs;
+                
+            } catch (error) {
+                console.error('Error updating stats:', error);
+            }
+        }
+        
+        function resetFormButton() {
+            // Only reset the button, keep the data and currentJobId
+            if (currentSource === 'google-maps') {
+                document.getElementById('generateBtn').disabled = false;
+                document.getElementById('generateBtn').innerHTML = '🚀 Generate Sacred Leads';
+            } else {
+                document.getElementById('dirGenerateBtn').disabled = false;
+                document.getElementById('dirGenerateBtn').innerHTML = '🚀 Generate Sacred Leads';
+            }
+        }
+        
+        function resetForm() {
+            // Full reset - clears everything
+            if (currentSource === 'google-maps') {
+                document.getElementById('generateBtn').disabled = false;
+                document.getElementById('generateBtn').innerHTML = '🚀 Generate Sacred Leads';
+            } else {
+                document.getElementById('dirGenerateBtn').disabled = false;
+                document.getElementById('dirGenerateBtn').innerHTML = '🚀 Generate Sacred Leads';
+            }
+            
+            document.getElementById('progressSection').classList.add('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('defaultState').classList.remove('hidden');
+            currentJobId = null;
+            
+            if (progressInterval) {
+                clearInterval(progressInterval);
+                progressInterval = null;
+            }
+        }
+        
+        function showError(message) {
+            alert('🕉️ Sacred Notice: ' + message);
+        }
+        
+        async function loadRecentJobs() {
+            try {
+                const response = await axios.get(`${BACKEND_URL}/api/recent-jobs`);
+                const jobs = response.data.jobs;
+                
+                // Find the most recent completed job
+                const completedJobs = jobs.filter(job => job.status === 'completed');
+                if (completedJobs.length > 0) {
+                    const latestJob = completedJobs[0]; // Most recent completed job
+                    
+                    // Load full job details including leads data
+                    const jobResponse = await axios.get(`${BACKEND_URL}/api/job-status/${latestJob.job_id}`);
+                    const jobData = jobResponse.data;
+                    
+                    if (jobData.status === 'completed' && jobData.leads && jobData.leads.length > 0) {
+                        // Set current job ID for downloads
+                        currentJobId = latestJob.job_id;
+                        
+                        // Show the results
+                        showResults(jobData);
+                        
+                        console.log(`Loaded ${jobData.leads_count} leads from recent job`);
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading recent jobs:', error);
+            }
+        }
+        
+        // Auto-refresh stats every 30 seconds
+        setInterval(updateTotalStats, 30000);
+        
+        // Load recent jobs on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTotalStats();
+            loadRecentJobs();
+        });
+        
+        // Test function - you can call this from browser console to test showResults
+        function testShowResults() {
+            const testJob = {
+                job_id: 'test-123',
+                leads_count: 5,
+                sources_used: ['Google Maps'],
+                leads: [
+                    {
+                        name: 'Test Restaurant 1',
+                        phone: '(555) 123-4567',
+                        email: 'info@testrestaurant1.com',
+                        address: '123 Main St, New York, NY',
+                        website: 'https://testrestaurant1.com',
+                        category: 'Restaurant',
+                        source: 'Google Maps'
+                    },
+                    {
+                        name: 'Test Restaurant 2',
+                        phone: '(555) 234-5678',
+                        email: 'contact@testrestaurant2.com',
+                        address: '456 Broadway, New York, NY',
+                        website: 'https://testrestaurant2.com',
+                        category: 'Restaurant',
+                        source: 'Google Maps'
+                    }
+                ]
+            };
+            
+            console.log('Testing showResults with test data...');
+            showResults(testJob);
+        }
+        
+        // Make test function available globally
+        window.testShowResults = testShowResults;
+        
+    </script>
+</body>
+</html>
